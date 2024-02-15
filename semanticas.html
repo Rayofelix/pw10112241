@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semanticas</title>
+    <!-- aqui van los scripts y los estilos -->
+    <style>
+        h1{
+            color: rgb(24, 24, 134);
+        }
+        header{
+            background-color: rgb(230, 225, 225);
+        }
+        header nav{
+            background-color: rgb(200, 198, 198);   
+        }
+        header nav ul li{
+            border-radius: 5px;
+            padding: 10px;
+            display:inline-block; 
+        }
+        header nav ul li:hover{
+            background-color: gray;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <!-- las semanticas son las que indican como estan estructuradas al buscador -->
+    <header>
+        <img width="150" src="https://images.vexels.com/media/users/3/143424/isolated/preview/2aa6cd7edd894a7cefa4eaf0f5916ee9-rayo-pequeno.png" alt="Logo.jpg">
+        <h1>Pagina de rayo</h1>
+        <nav>
+            <ul>
+                <li>Inicio</li>
+                <li>Archivo</li>
+                <li>Guardar</li>
+                <li>Nosotros</li>
+                <li>Salir</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        Aqui va lo importante
+        <section>
+            <article>
+                aqui va la informacion, se pueden article dentro de articles, fuera de section, pero no section dentro de section
+            </article>
+        </section>
+        <aside>
+            engloba informacion no importante para la pagina
+            informacion tangencial de la empresa
+        </aside>   
+    </main>
+    <footer>
+        este es un pie de pagina(contacto como telefonos, direcciones, &copy; 2024 ) <br>
+        Productividad <br>
+        <ul>
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+            <li>Elemento 4</li>
+        </ul>
+    </footer>
+    <section class="noticias"></section>
+    <section id="inicio"></section>
+</body>
+</html>
