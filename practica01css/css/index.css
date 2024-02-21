@@ -1,0 +1,20 @@
+/* siempre se inicia estilizando el body */
+/*Notas:
+    -la letra M es el caracter mas ancho que existe, entonces
+    se usan conjuntos de M de ahi el nombre em
+    -tamaño estandar de texto es de 16px = 1em 
+    -los valores en caso de ser 4 van en las manecillas del reloj
+    -en caso de tener dos valores son AA--ID
+    -en caso de tener 1 valor aplica para los 4 lados*/    
+body{
+    border: 1px dashed red;
+    font-size: 16px;
+    margin: 0px auto;
+    max-width: 1024px;
+}
+header{
+    background: #D1E3EE;
+}
+#logo{
+    margin:-150px 0px 0px 0px;
+}
