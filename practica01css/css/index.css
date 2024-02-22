@@ -15,6 +15,31 @@ body{
 header{
     background: #D1E3EE;
 }
+header nav{
+    background: #026DC6;
+    border-radius: 5px;     /*Estandar es 5px*/
+    margin: 0px auto;       /*Centrar cajas*/
+    padding: 2px 0px ;
+    width: 99%;
+}
+header nav form{
+    float: right;           /*mover elementos dentro de la caja*/
+    margin-right: 10px;
+    margin-top: -35px;
+}
+header nav form input{
+    border-radius: 5px;
+}
+header nav form input[type="submit"]{
+    background: green;
+    border: 1px solid green;
+    color: #FFFFFF;
+}
+header nav ul li{
+    color: #FFFFFF;
+    display: inline-block;  /*Acomodar horizontal*/
+    margin-right: 20px;     /*Separar cajas*/
+}
 #logo{
-    margin:-150px 0px 0px 0px;
+    margin-top: -150px;
 }
