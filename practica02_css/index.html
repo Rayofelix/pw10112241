@@ -4,29 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Práctica 02 CSS</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <header>
         <img src="img/banner.png" alt="linea">
-        <img src="img/granthams.png" alt="logo">
-        <img src="img/paint.png" alt="pintura">
+        <img src="img/granthams.png" id="logoGranthams" alt="logo">
+        <img src="img/paint.png" id="imgPaint" alt="pintura">
         <input type="search" placeholder="Search" size="25">
         <nav>
             <ul>
                 <li>Print</li>
                 <li>Copy</li>
                 <li>Finishing</li>
-                <li>Desing</li>
+                <li>Design</li>
                 <li>Exhition</li>
             </ul>
         </nav>
     </header>
-    <section>
-        <article>
+    <section id="fistSection">
+        <article id="sect01Art01">
             <img src="img/slide.jpg" alt="slide">
         </article>
-        <article>
-            We can offer...
+        <article id="sect01Art02">
+            <span class="bigSize pinkColor nito">We can offer...</span> 
             <ul>
                 <li>Highly Competitive Prices</li>
                 <li>Variable Data</li>
@@ -38,38 +39,38 @@
                 <li>Great Customer Service</li>
             </ul>
         </article>
-        <img src="img/bg_offer.png" alt="Offers">
+        <img src="img/bg_offer.png" id="bgOffer" alt="Offers">
     </section>
-    <section>
+    <section id="secondSection">
         <article>
-            01772 250207
+            <span class="midSize pinkColor nito">01772 250207</span> 
         </article>
     </section>
-    <section>
+    <section id="thirdSection">
         <article>
             <img src="img/cerdito.png" alt="cerdito">
-            Save this Spring
+            <span class="pinkColor nito">Save this Spring</span>
             <br>
             Fabulous discounts on canvas's and roll up's as well as many others offers
             <p></p>
-            Find out More..
+            <span class="pinkColor">Find out More..</span>
         </article>
         <article>
             <img src="img/hoja.png" alt="hoja">
-            ECO Friendly
+            <span class="greenColor nito">ECO Friendly</span>
             <br>
             ECO Friendly Materials used in our production process. Recycled papers and paper from Sustainable Forest(including FSC papers) are available across our range of Printing Services.
         </article>
         <article>
             <img src="img/new.png" alt="new">
-            Upload your file
+            <span class="blueColor nito">Upload your file</span>
             <br>
             Making it easy to order your printing today. Our upload facility enables you to send your files directly to us. Use the notes section to inform us of your order, then sit back and wait for a member of our team contact you.
             <p></p>
-            Upload Your File Now..
+            <span class="blueColor">Upload Your File Now..</span>
         </article>
         <article>
-            Stay in touch
+            <span class="midSize pinkColor">Stay in touch</span>
             <br>
             Join our mailing list today
             <input type="email" placeholder="Email goes here">
