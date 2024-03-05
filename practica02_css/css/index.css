@@ -32,3 +32,49 @@ header nav ul li{
 #imgPaint{
     float: right;
 }
+#bgOffer{
+    position: relative;
+    top: -410px;
+    left: -65px;
+}
+#firstSection{
+    height: 318px;
+    margin-top: 60px;
+}
+#firstSection article{
+    display: inline-block;
+    vertical-align: top;
+}
+#sect01Art01{
+    width: 61%;
+}
+#sect01Art02{
+    width: 30%;
+    margin-left: 40px;
+}
+#sect01Art02 ul{
+    list-style: none;
+}
+#sect01Art02 ul li::before{
+    color: #FF0099;
+    content: " • ";
+}
+.pinkColor{
+    color: #FF0099;    
+}
+.blueColor{
+    color: #4267b3;
+}
+.greenColor{
+    color: #8BC500;
+}
+.bigSize{
+    font-size: 3.5em;
+}
+.midSize{
+    font-size: 2em;
+}
+.nito{
+    font-weight: bold;
+}
+
