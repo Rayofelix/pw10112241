@@ -1,23 +1,26 @@
-body{
+body {
     font-size: 16px;
     margin: 0px auto;
     max-width: 1078px;
     min-width: 1078px;
 }
-header input{
+
+header input {
     float: right;
     margin-right: -220px;
     margin-top: 20px;
     padding: 3px;
 }
-header nav{
+
+header nav {
     /* text-align: center; se puede pero no nos sirve*/
     /* margin: 0 auto; es otra forma de hacerlo*/
     margin-left: 230px;
 }
-header nav ul li{
-    border-bottom: 1px solid rgba(150, 150, 150,.5);
-    color: rgba(150, 150, 150,.5);
+
+header nav ul li {
+    border-bottom: 1px solid rgba(150, 150, 150, .5);
+    color: rgba(150, 150, 150, .5);
     display: inline-block;
     font-size: 1.8em;
     margin-right: 20px;
@@ -25,56 +28,126 @@ header nav ul li{
     /* text-decoration: underline; es una forma pero no nos sirve*/
 }
 
-#logoGranthams{
+footer {
+    background-color: #4267b3;
+    color: white;
+}
+
+
+
+#logoGranthams {
     margin-left: 40px;
     margin-top: 20px;
 }
-#imgPaint{
+
+#imgPaint {
     float: right;
 }
-#bgOffer{
+
+#bgOffer {
     position: relative;
     top: -410px;
     left: -65px;
 }
-#firstSection{
+
+#firstSection {
     height: 318px;
     margin-top: 60px;
 }
-#firstSection article{
+
+#firstSection article {
     display: inline-block;
     vertical-align: top;
 }
-#sect01Art01{
+
+#sect01Art01 {
     width: 61%;
 }
-#sect01Art02{
+
+#sect01Art02 {
     width: 30%;
     margin-left: 40px;
 }
-#sect01Art02 ul{
+
+#sect01Art02 ul {
     list-style: none;
 }
-#sect01Art02 ul li::before{
+
+#sect01Art02 ul li::before {
     color: #FF0099;
     content: " • ";
 }
-.pinkColor{
-    color: #FF0099;    
+
+#sect03art04 {
+    margin-top: 60px;
 }
-.blueColor{
+
+#secondSection {
+    padding-right: 140px;
+    text-align: right;
+}
+
+#thirdSection article {
+    width: 23%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#thirdSection article img {
+    vertical-align: middle;
+}
+#temp1 ul {
+    display: flex;
+    padding: 0px;
+}
+
+#temp1 ul li {
+    list-style: none;
+    padding: 0px 4px;
+    border-right: 1px solid white;
+}
+
+#temp1 ul li:nth-last-child(1) {
+    border: 0px;
+}
+
+#temp1 ul li a {
+    text-decoration: none;
+    color: white;
+}
+#sect3art04 input[type="email"]{
+    padding: 5px;
+    font-size: 1.1em;
+}
+#sect3art04 input[type="button"]{
+    padding: 5px;
+    width: 50px;
+}
+#monitos{
+    float: right;
+}
+
+.pinkColor {
+    color: #FF0099;
+}
+
+.blueColor {
     color: #4267b3;
 }
-.greenColor{
+
+.greenColor {
     color: #8BC500;
 }
-.bigSize{
+
+.bigSize {
     font-size: 3.5em;
 }
-.midSize{
+
+.midSize {
     font-size: 2em;
 }
-.nito{
+
+.nito {
     font-weight: bold;
 }
 
