@@ -1,3 +1,29 @@
+html{
+    /* se llama custom property y es para guardar un valor... obligatoriamente inicia con -- */
+    --color-verde: #a7d12b;
+    --color-negro: #353535;
+    --color-rojo: #D33040;
+    --color-gris: lightgray;
+}
 body{
-    font-size: 16px;
+    font-size: 16px;    /*1em*/
+    margin: 0 auto;     /*centrado*/
+    max-width: 1024px;  /*ancho maximo*/
+}
+header ul li{
+    display: inline-block;
+    width: 17%;
+}
+/* es nth porque  es el elemento n con th por la posicion */
+header ul li:nth-child(2){
+    background: var(--color-verde)
+}
+header ul li:nth-child(3){
+    background: var(--color-negro)
+}
+header ul li:nth-child(4){
+    background: var(--color-rojo)
+}
+header ul li:nth-child(5){
+    background: var(--color-gris)
 }
