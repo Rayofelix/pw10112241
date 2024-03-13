@@ -14,14 +14,30 @@ body{
     margin: 0 auto;     /*centrado*/
     max-width: 1024px;  /*ancho maximo*/
 }
-header ul li{
+footer article{
     display: inline-block;
-    margin-left: -5px;
-    padding: 8px 14px;
+    margin-top: 20px;
+    padding: 10px;
+    vertical-align: top;
+    width: 31.1%;
+}
+footer img{
+    width: 300px;
+}
+
+header ul li{
+    border: 1px solid red;
+    margin-left: -20px;
+    margin-right: 8px;
+    display: inline-block;
+    padding: 8px 15px;
     text-align: center;
-    width: 17%;
+    width:18%;
 }
 /* es nth porque  es el elemento n con th por la posicion */
+header ul li:nth-child(1){
+    margin-left: -40px;
+}
 header ul li:nth-child(2){
     background: var(--color-verde)
 }
@@ -34,7 +50,10 @@ header ul li:nth-child(4){
 header ul li:nth-child(5){
     background: var(--color-gris)
 }
-
+hr{
+    border-style: dashed;
+    color: var(--color-linea);
+}
 section article{
     display: inline-block;
     height: 280px;
@@ -58,13 +77,16 @@ section article:nth-child(5){
     background: var(--color-gris);
 }
 
-/* la coma significa y en los selectores */
+/* la coma significa "y" en los selectores */
 section,footer{
     background: var(--fondo-negro);
 }
 section img{
     width: 150px;
 }
+
+
+
 .letra-azul{
     color: var(--color-azul);
 }
@@ -74,10 +96,14 @@ section img{
 .letra-gris{
     color: var(--color-linea);
 }
+.read-more{
+    margin-left: 220px;
+}
 .tam-menu-lateral{
-    font-size: 1.1em;
+    font-size: 1.7em;
 }
 .tam-tarjetas{
     font-size: 1.5em;
 }
+
 
