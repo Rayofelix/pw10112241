@@ -1,13 +1,74 @@
 html{
     --color-azul-bajo:rgba(35,94,146,1);
     --color-azul-fuerte:rgba(30,73,115,1);
+    --color-gris:rgba(239,239,239,1);
 }
 body{
-    background: var(--color-azul-bajo);
     font-size: 16px;
     margin: 0px auto;
     max-width: 1024px;
 }
-header img{
-    margin-left: 40%;
+header{
+    background: var(--color-azul-bajo);
 }
+header img{
+    width: 200px;
+    margin-left: 40%;
+    padding: 10px;
+}
+main{
+    margin-top: -14px;
+    background: var(--color-gris);
+}
+
+#section01 article nav{
+    margin-left: 68%;
+}
+#section01 article nav ul li{
+    display: inline-block;
+    list-style: none;
+}
+#section01 article nav ul li img{
+    width: auto;
+    height:35px;
+}
+
+#panelWithLinks{
+    background-color: var(--color-azul-fuerte);
+    color: var(--color-gris);
+}
+#panelWithLinks img{
+    width: 100%;
+}
+#panelWithLinks ul{
+    margin: -5px 0 0 -10px;
+
+}
+#panelWithLinks ul li{
+    font-size: .9em;
+    list-style: none;
+    margin-left: -25px;
+    padding: 5px;
+}
+#panelWithProgress{
+    background: white;
+    margin-top: 20px;
+}
+#panelWithProgress span{
+    background-color: var(--color-azul-bajo);
+}
+#panelWithProgress ul li{
+    margin-left: -40px;
+    list-style: none;
+}
+#panelWithProgress ul li img{
+    margin-top: 10px;;
+    width: 100%;
+}
+
+.leftPanel{
+    border: 1px solid red;
+    margin-left: 15px;
+    max-width: 260px;
+}
+
