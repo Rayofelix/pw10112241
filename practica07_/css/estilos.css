@@ -2,7 +2,7 @@ html{
     --color-background:rgba(31,41,55,1);
     --color-white:rgba(255,255,255,1);
     --color-blue:rgba(29,78,211,1);
-    --color-gray: rgba(56,65,81,1);
+    --color-gray: rgb(99, 105, 117);
 }
 body{
     font-size: 16px;
@@ -12,12 +12,13 @@ body{
 header{
     background: var(--color-background);
     color: var(--color-white);
+    padding: 10px;
 }
 header img{
     margin-top: 10px;
     width: 40px;
+    vertical-align: middle;
 }
-
 header nav{
     float: right;
     margin-right: 50px;
@@ -36,20 +37,75 @@ header nav ul li img{
 section p{
     color: var(--color-gray);
 }
+.button{
+    border-radius: 25px;
+    border-style: none;
+    color: var(--color-white);
+    margin-right: 10px;
+    padding: 15px;
+    width: 120px;
+}
 
+.title{
+    font-size: 1.8em;
+}
+.bodyLetter{
+    font-size: 1.1em;
+}
 .grayLetter{
     color: var(--color-gray);
 }
-
 .whiteLetter{
     color: var(--color-white);
 }
-
 .bold{
     font-weight: bold;
 }
+.card{
+    display: inline-block;
+    margin-top: -100px;
+    margin-left: 10px;
+    width: 30%;
+}
 
 #firstSection{
-    margin: 0px auto;
     background: var(--color-background);
+    text-align: center;
 }
+
+#firstSection article{
+    margin: 0 auto;
+    max-width: 60%;
+    padding-top: 50px;
+}
+
+#started{
+    background-color: var(--color-blue);
+}
+#demo{
+    background-color: var(--color-gray);
+}
+#imgMiddle{
+    border: 5px solid var(--color-white);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px var(--color-gray);
+    margin-bottom: -100px;
+    width: 550px;
+}
+#secondSection{
+    background: var(--color-white);
+    text-align: center;
+}
+
+#secondSection article{
+    padding-top: 120px;
+}
+
+#secondSection article img{
+    width: 70px;
+}
+#secondSection article p{
+    text-align: start;
+}
+
+
