@@ -1,0 +1,91 @@
+html{
+    --white-color:rgba(255,255,255,1);
+    --red-color:rgba(255,3,67,1);
+    --gray-color: gray;
+    --background-color:rgba(246, 245, 245,1);
+}
+body{
+    font-size: 16px;
+    margin: 0px auto;
+    max-width: 1024px;
+}
+
+header article img{
+    display: inline-block;
+    vertical-align: middle;
+    width: 180px;
+}
+header article nav{
+    display: inline-block;
+    margin-left: 15%;
+    margin-right: 12%;
+}
+header article nav ul li{
+    display: inline-block;
+    color: var(--gray-color);
+    list-style: none;
+    margin-left: 15px;
+}
+
+
+/* Clases */
+.btnRed{
+    background: var(--red-color);
+    border-color: var(--red-color);
+    border-radius: 5px;
+    border-style: solid;
+    color: var(--white-color);
+    height: 40px;
+    margin-left: 15px;
+    width: 100px;
+}
+.btnWhite{
+    background: var(--white-color);
+    border-color: var(--red-color);
+    border-radius: 5px;
+    border-style: solid;
+    color: var(--red-color);
+    height: 40px;   
+    margin-left: 15px;
+    width: 100px;
+}
+.bold{
+    font-weight: bold;
+}
+.cards{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+    margin-top: 50px;
+    width: 22%;
+}
+.bigLetter{
+    font-size: 3em;
+}
+.grayLetter{
+    color: var(--gray-color);
+}
+.midLetter{
+    font-size: 2em;
+}
+.smallLetter{
+    font-size: 1.5em;
+}
+
+ /* IDs */
+ #left{
+    display: inline-block;
+    margin-left: 1%;
+    width: 49%;
+ }
+ #left img{
+    width: 500px;
+ }
+ #right{
+    display: inline-block;
+    text-align: center;
+    width: 49%;
+ }
+ #secondSection{
+    padding-top: 100px;
+ }
