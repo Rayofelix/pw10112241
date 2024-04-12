@@ -1,3 +1,7 @@
+html{
+    --color-green:rgb(115,243,61);
+    --color-gray:rgb(120, 120, 120);
+}
 body{
     font-size: 16px;
     margin: 0px auto;
@@ -7,11 +11,47 @@ body{
 header article img{
     margin-left: 30px;
     margin-top: 30px;
+    width: 200px;
+}
+header nav{
+    margin-left: -10px;
 }
 header nav ul li{
     display: inline-block;
     list-style: none;
-    padding: 8px;
+    padding: 10px 10px 10px 0px;
+}
+
+section hr{
+    border-style: dashed;
+    border-color: var(--color-gray);
+}
+footer article ul li{
+    list-style: none;
+}
+footer article{
+    display: inline-block;
+    font-size: .8em;
+    padding-top: 10px;
+    vertical-align: top;
+    width: 18%;
+}
+.bold{
+    font-weight: bold;
+ }
+
+.bigLetter{
+    font-size: 3em;
+}
+
+.flag{
+    width: 30px;
+}
+.greenColor{
+    color: var(--color-green);
+}
+.grayColor{
+    color: var(--color-gray);
 }
 
 .img-right{
@@ -19,3 +59,66 @@ header nav ul li{
     margin-left: 2px;
     margin-top: 10px;
 }
+.left{
+    width: 50%;
+}
+.left img{
+    display: inline-block;
+    margin-left: 10px;
+    width: 45%;
+}
+.right{
+    float: right;
+    margin-top: -379px;
+    width: 50%;
+}
+.bottomSection article{
+    padding: 30px 0px
+}
+.bottomSection img{
+    vertical-align: middle;
+    width: 100px;
+}
+#img-bike{
+    float: right;
+    margin-right: 100px;
+    width: 300px;
+}
+#img-5years{
+    position: relative;
+    margin-top: -50px;
+    width: 100px;
+}
+#firstSection{
+    display: inline-block;
+}
+#buy{
+    margin-top: -50px;
+    margin-right: 280px;
+    float: right;
+    width: 50px;
+}
+#goToShop{
+    margin-right: 80px;
+    margin-top: -110px;
+    float: right;
+    width: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
