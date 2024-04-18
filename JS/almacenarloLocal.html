@@ -1,0 +1,49 @@
+<!-- Local storage la informacion se guardan dentro del navegador y si se cierra se borran
+    Sesion storage guarda informacion aunque cierres el navegador -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local and session storage</title>
+</head>
+<body>
+    <div id="demo">0</div>
+    <button onclick="increaseCounter();">Increase</button>
+    <button onclick="decreaseCounter();">Decrease</button>
+    <button onclick="restartCounter();">Restart</button>
+    <button onclick="deleteCounter();">Delete counter</button>
+    <script>
+        const print = (info) => {
+            document.getElementById('demo').innerHTML = info;
+        }
+        const increaseCounter = () => {
+            localStorage.count++;
+            print(localStorage.count);
+        }
+        const decreaseCounter = () => {
+            localStorage.count--;
+            print(localStorage.count);
+        }
+        const restartCounter = () => {
+            localStorage.count = 0;
+            print(localStorage.count);
+        }
+        const deleteCounter = () => {
+            localStorage.removeItem('count');
+            print(localStorage.count);
+        }
+        //lo primer que se debe hacer es:
+        //comprobar si podemos usar localStorage o sessionStorage
+        if(typeof(Storage) != "undefined"){
+            //se crea la variable automaticamente dentro de storage localStorage.variable
+            if(localStorage.count){
+                print(localStorage.count);
+            } else {
+                localStorage.count = 0;
+            }
+        }
+    </script>
+</body>
+</html>

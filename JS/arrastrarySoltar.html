@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop</title>
+    <link rel="stylesheet" href="CSS/styleDrag.css">
+</head>
+<body>
+    <h2>Drag and Drop</h2>
+    <div id="dragZone" ondragover="allowDrop(event);" ondrop="drop(event);">
+        <!-- lo importante es poner la propiedad draggable para indicar que se puede arrastrar -->
+        <img id="drag1" src="img/bolitaAmarilla.png" alt="bolitaAmarilla" height="150" width="auto" draggable="true" ondragstart="drag(event);">
+        <img id="drag2" src="img/bolitaAmarilla.png" alt="bolitaAmarilla" height="150" width="auto" draggable="true" ondragstart="drag(event);">
+        <img id="drag3" src="img/bolitaAmarilla.png" alt="bolitaAmarilla" height="150" width="auto" draggable="true" ondragstart="drag(event);">
+        <img id="drag4" src="img/bolitaAmarilla.png" alt="bolitaAmarilla" height="150" width="auto" draggable="true" ondragstart="drag(event);">
+        <img id="drag5" src="img/bolitaAmarilla.png" alt="bolitaAmarilla" height="150" width="auto" draggable="true" ondragstart="drag(event);">
+    </div>
+    <div id="dropZone" ondragover="allowDrop(event);" ondrop="drop(event);">
+
+
+    </div>
+    
+</body>
+</html>
