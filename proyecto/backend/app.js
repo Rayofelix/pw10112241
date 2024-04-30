@@ -57,6 +57,41 @@ app.get('/api/clients/:id',(req,res)=>{
     })//consulta de sql
 });
 
+app.delete('/api/clients/:id',(req,res)=>{
+    let id = req.params.id;
+    conexion.query('delete from clients where id=?',[id],(error,rows)=>{
+        if(error){
+            throw error;
+        }else{
+            res.send(rows);
+        }
+    });
+});
+
+// <form action='url' method='post'>
+// req.body
+// se recomienda usar id y name en forms para hacer referencias
+app.post('/api/clients',(req,res)=>{
+    let data = {
+        id: req.body.id,
+        name: req.body.name,
+        lastname: req.body.lastname,
+        address: req.body.address,
+        phone: req.body.phone,
+        rfc: req.body.rfc,
+        curp: req.body.curp,
+        cp: req.body.cps
+    };
+    let sql = 'insert into clientes set ?';
+    conexion.query(sql,data,(error,rows)=>{
+        if(error){
+            throw error;
+        }else{
+            res.send(rows);
+        }
+    });
+});
+
 // Tercer paso
 // Encender servidor
 let puerto = 3000;
