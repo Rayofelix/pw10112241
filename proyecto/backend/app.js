@@ -82,8 +82,28 @@ app.post('/api/clients',(req,res)=>{
         curp: req.body.curp,
         cp: req.body.cps
     };
-    let sql = 'insert into clientes set ?';
+    let sql = 'insert into clients set ?';
     conexion.query(sql,data,(error,rows)=>{
+        if(error){
+            throw error;
+        }else{
+            res.send(rows);
+        }
+    });
+});
+
+// Actualizar
+app.put('/api/clients/:id',(req,res)=>{
+    let id = req.params.id; // Solo este viene de params
+    let name = req.body.name;
+    let lastname = req.body.lastname;
+    let address = req.body.address;
+    let phone = req.body.phone;
+    let rfc = req.body.rfc;
+    let curp = req.body.curp;
+    let cp = req.body.cp;
+    let sql = 'update clients set name = ?, lastname = ?,address = ?,phone = ?,rfc = ?,curp = ?,cp = ? where id = ?';
+    conexion.query(sql,[name,lastname,address,phone,rfc,curp,cp,id],(error,rows)=>{
         if(error){
             throw error;
         }else{
