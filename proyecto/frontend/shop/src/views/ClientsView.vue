@@ -30,11 +30,11 @@
                             <td>{{ client.curp }}</td>
                             <td>{{ client.cp }}</td>
                             <td>
-                                <button class="btn btn-primary">
-                                    Editar
-                                </button>
+                                <RouterLink :to="{path: '/clients/'+ client.id +'/edit' }" class="btn btn-success">
+                                    Edit
+                                </RouterLink>
                                 <button class="btn btn-danger" @click="deleteClients(client.id)">
-                                    Borrar
+                                    Delete
                                 </button>
                             </td>
                         </tr>
@@ -52,6 +52,7 @@
 
 <script>
     import axios from 'axios';
+    import { RouterLink } from 'vue-router';
     export default{
         name:'ClientsView',
         data(){

@@ -2,9 +2,9 @@
     <div class="container mt-5">
         <div class="card">
             <div class="card-header">
-                <h4>Add Client</h4>
+                <h4>Edit Client</h4>
                 <div v-if="message==1" class=" alert alert-success" role="alert" >
-                    Data Save Succesfully!
+                    Data Updated Succesfully!
                 </div>
             </div>
             <div class="card-body">
@@ -108,10 +108,19 @@ export default{
             }
         }
     },
+    mounted(){
+            this.getClients(this.$route.params.id);
+    },
     methods:{
+        getClients(idClient){
+            axios.get('http://localhost:3000/api/clients/' + idClient).then(res=>{
+                // this.model.client.id  = res.data[0].id;  este es la manera 'manual' de recuperar datos uno por uno por posicion
+                this.model.client = res.data[0]; //este copia todo siempre y cuando este en el mismo orden
+            });
+        },
         onOK(){
-            alert('Client Added Successfully');
-            axios.post('http://localhost:3000/api/clients',this.model.client).then(res =>{
+            alert('Client Updated Successfully');
+            axios.put('http://localhost:3000/api/clients/' + this.$route.params.id,this.model.client).then(res =>{
                 if(res.data.affectedRows == 1){
                     this.model.client = { //Limpiar cuadros de texto al dar click al boton
                         id:'',
@@ -126,7 +135,7 @@ export default{
                     this.message = 1;
                 }
             });
-        },
+        }
     }
 }
 </script>
