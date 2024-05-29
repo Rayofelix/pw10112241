@@ -5,6 +5,10 @@ import ClientsCreateView from '../views/ClientsCreateView.vue'
 import ClientsEditView  from '../views/ClientsEditView.vue'
 import LoginView from '../views/LoginView.vue'
 import SignInView from '../views/SignInView.vue'
+import UnauthorizedView from '../views/UnauthorizedView.vue'
+import { record } from 'zod'
+import { getAuth } from 'firebase/auth'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -26,12 +30,20 @@ const router = createRouter({
     {
       path: '/clients',
       name: 'clients',
-      component: ClientsView
+      component: ClientsView,
+      meta:{
+        requiredAuth:true
+      }
     },
     {
       path: '/clients/create',
       name: 'clientsCreate',
       component: ClientsCreateView
+    },
+    {
+      path: '/clients/unauthorized',
+      name: 'unauthorized',
+      component: UnauthorizedView
     },
     {
       path: '/clients/:id/edit',
@@ -47,6 +59,18 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     }
   ]
+})
+
+router.beforeEach((to,from,next)=>{
+  if(to.matched.some((record)=> record.meta.requiredAuth)){
+    if (getAuth().currentUser) {
+        next();
+    }else{
+      next('/clients/unauthorized')
+    }
+  }else{
+    next();
+  }
 })
 
 export default router

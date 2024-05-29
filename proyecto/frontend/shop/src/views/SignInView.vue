@@ -24,8 +24,8 @@
                     <input v-model="password" type="password" id="typePasswordX" class="form-control form-control-lg" />
                     <label class="form-label" for="typePasswordX">Password</label>
                   </div>
-                  <button @click.prevent="signInGoogle()" class="btn btn-outline-light btn-lg px-5" type="submit">Sign in with Google</button>
-                  <button @click.prevent="login()" class="btn btn-outline-light btn-lg px-5" type="submit">Sign In</button>
+                  <button @click.prevent="signInGoogle()" class="btn btn-outline-light btn-lg px-5" type="submit"><Icon icon='logos:google-icon'/>Google</button>
+                  <button @click.prevent="signIn()" class="btn btn-outline-light btn-lg px-5" type="submit">Sign In</button>
     
                 </div>
     
@@ -37,9 +37,11 @@
     </section>
     </template>
     <script>
-    import { getAuth,signInWithEmailAndPassword } from 'firebase/auth';
+    import { getAuth,signInWithEmailAndPassword,GoogleAuthProvider,signInWithPopup } from 'firebase/auth';
+    import { Icon } from '@iconify/vue'
       export default{
         name: "LoginView",
+        components:{Icon},
         data(){
           return{
             email:'',
@@ -48,7 +50,7 @@
           }
         },
         methods:{
-          login(){
+          signIn(){
             signInWithEmailAndPassword(getAuth(),this.email,this.password).then((data)=>{
               this.message='';
               this.email='';
@@ -69,6 +71,13 @@
                     this.message='Incorrect Email or Password '
                     break;
               }
+            })
+          },
+          signInGoogle(){
+            const provider = new GoogleAuthProvider();
+            signInWithPopup(getAuth(),provider).then((result)=>{
+              this.$router.push('/clients/')
+
             })
           },
         }
