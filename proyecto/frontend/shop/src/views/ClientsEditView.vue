@@ -113,14 +113,15 @@ export default{
     },
     methods:{
         getClients(idClient){
-            axios.get('http://localhost:3000/api/clients/' + idClient).then(res=>{
+            
+            axios.get('http://localhost:3000/api/clients/id/' + idClient).then(res=>{
                 // this.model.client.id  = res.data[0].id;  este es la manera 'manual' de recuperar datos uno por uno por posicion
                 this.model.client = res.data[0]; //este copia todo siempre y cuando este en el mismo orden
             });
         },
         onOK(){
             alert('Client Updated Successfully');
-            axios.put('http://localhost:3000/api/clients/' + this.$route.params.id,this.model.client).then(res =>{
+            axios.put('http://localhost:3000/api/clients/id/' + this.$route.params.id,this.model.client).then(res =>{
                 if(res.data.affectedRows == 1){
                     this.model.client = { //Limpiar cuadros de texto al dar click al boton
                         id:'',

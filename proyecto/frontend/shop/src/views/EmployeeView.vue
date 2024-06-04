@@ -1,8 +1,8 @@
 <template>
     <div class="container">
         <div class="container-search">
-            <Icon icon="hugeicons:search-02" />
             <input class="search" type="search" name="searchEmployee" id="searchEmployee" placeholder="Search">
+            <button @click="getEmployeesNameOrId()" class="btn btnSearch"><Icon icon="hugeicons:search-02" /></button>
         </div>
         <div class="card">
             <div class="card-header">
@@ -50,6 +50,7 @@
     import axios from 'axios';
     import {Icon} from '@iconify/vue';
     import { RouterLink } from 'vue-router';
+    import '../assets/searchBar.css';
     export default{
         name:'EmployeeView',
         components:{Icon},
@@ -73,23 +74,28 @@
                     console.log(res);
                     this.getEmployees();
                 })
+            },
+            getEmployeesNameOrId() {
+            const employeeSearching = document.getElementById('searchEmployee').value;
+            if (!isNaN(employeeSearching)) {
+                // Es un ID
+                axios.get(`http://localhost:3000/api/employees/id/${employeeSearching}`).then(res => {
+                    this.employees = res.data;
+                }).catch(err => {
+                    console.error(err);
+                });
+            } else if (employeeSearching) {
+                // Es un nombre
+                axios.get(`http://localhost:3000/api/employees/name/${employeeSearching}`).then(res => {
+                    this.employees = res.data;
+                }).catch(err => {
+                    console.error(err);
+                });
+            }
+             else {
+                this.getEmployees(); // Para restablecer la lista si no se ingresa ningún valor de búsqueda
             }
         }
     }
+}
 </script>
-<style>
-    .container-search{
-        padding: 10px;
-        margin-bottom: 50px;
-        margin-top: 20px;
-    }
-    .search{
-        text-align: center;
-        background: #f1f1f1;
-        border-radius: 15px;
-        font-size: 1.3em;
-        margin-left: 5px;
-        padding: 5px;
-        width: 200px;
-    }
-</style>

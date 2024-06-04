@@ -88,7 +88,7 @@ export default{
                 phone: zod.string().regex(phoneRegex,'Invalid number').min(10,{message:'Min 10'}),
                 rfc: zod.string().regex(rfcRegex,'Invalid rfc'),
                 curp: zod.string().regex(curpRegex,'Invalid curp'),
-                cp: zod.string().regex(cpRegex,'Invalid cp'),
+                cp: zod.string().regex(curpRegex,'Invalid cp'),
             })
         );
         return{

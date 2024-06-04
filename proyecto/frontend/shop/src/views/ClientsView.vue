@@ -1,5 +1,9 @@
 <template>
     <div class="container">
+        <div class="container-search">
+            <input class="search" type="search" name="searchClient" id="searchClient" placeholder="Search">
+            <button @click="getClientsNameOrId()" class="btn btnSearch"><Icon icon="hugeicons:search-02" /></button>
+        </div>
         <div class="card">
             <div class="card-header">
                 <h4>Clients
@@ -30,7 +34,7 @@
                             <td>{{ client.curp }}</td>
                             <td>{{ client.cp }}</td>
                             <td>
-                                <RouterLink :to="{path: '/clients/'+ client.id +'/edit' }" class="btn btn-success">
+                                <RouterLink :to="{path: '/clients/id/'+ client.id +'/edit' }" class="btn btn-success">
                                     Edit
                                 </RouterLink>
                                 <button class="btn btn-danger" @click="deleteClients(client.id)">
@@ -54,6 +58,7 @@
     import axios from 'axios';
     import {Icon} from '@iconify/vue'
     import { RouterLink } from 'vue-router';
+    import '../assets/searchBar.css';
     export default{
         name:'ClientsView',
         components:{Icon},
@@ -77,7 +82,28 @@
                     console.log(res);
                     this.getClients();
                 })
+            },
+            getClientsNameOrId() {
+            const clientSearching = document.getElementById('searchClient').value;
+            if (!isNaN(clientSearching)) {
+                // Es un ID
+                axios.get(`http://localhost:3000/api/clients/id/${clientSearching}`).then(res => {
+                    this.clients = res.data;
+                }).catch(err => {
+                    console.error(err);
+                });
+            } else if (clientSearching) {
+                // Es un nombre
+                axios.get(`http://localhost:3000/api/clients/name/${clientSearching}`).then(res => {
+                    this.clients = res.data;
+                }).catch(err => {
+                    console.error(err);
+                });
+            } else {
+                this.getClients(); // Para restablecer la lista si no se ingresa ningún valor de búsqueda
             }
         }
     }
+}
+
 </script>

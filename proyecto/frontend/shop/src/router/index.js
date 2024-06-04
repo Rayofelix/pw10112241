@@ -52,7 +52,7 @@ const router = createRouter({
       component: UnauthorizedView
     },
     {
-      path: '/clients/:id/edit',
+      path: '/clients/id/:id/edit',
       name: 'clientsEdit',
       component: ClientsEditView
     },

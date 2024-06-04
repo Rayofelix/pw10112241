@@ -1,5 +1,9 @@
 <template>
     <div class="container">
+        <div class="container-search">
+            <input class="search" type="search" name="searchArticle" id="searchArticle" placeholder="Search">
+            <button @click="getArticlesNameOrDescription()" class="btn btnSearch"><Icon icon="hugeicons:search-02" /></button>
+        </div>
         <div class="card">
             <div class="card-header">
                 <h4>Articles
@@ -45,8 +49,11 @@
 <script>
     import axios from 'axios';
     import { RouterLink } from 'vue-router';
+    import {Icon} from '@iconify/vue';
+    import '../assets/searchBar.css';
     export default{
         name:'ClientsView',
+        components:{Icon},
         data(){
             return{
                 articles:[],
@@ -67,7 +74,27 @@
                     console.log(res);
                     this.getArticles();
                 })
+            },
+            getArticlesNameOrDescription() {
+            const articleSearching = document.getElementById('searchArticle').value;
+            if (!isNaN(articleSearching)) {
+                // Es un ID
+                axios.get(`http://localhost:3000/api/articles/id/${articleSearching}`).then(res => {
+                    this.articles = res.data;
+                }).catch(err => {
+                    console.error(err);
+                });
+            } else if (articleSearching) {
+                // Es un nombre
+                axios.get(`http://localhost:3000/api/articles/description/${articleSearching}`).then(res => {
+                    this.articles = res.data;
+                }).catch(err => {
+                    console.error(err);
+                });
+            } else {
+                this.getArticles(); // Para restablecer la lista si no se ingresa ningún valor de búsqueda
             }
         }
     }
+}
 </script>

@@ -48,16 +48,26 @@ app.get('/api/clients',(req,res)=>{
 });
 
 
-// seleccionamos un cliente en especifico
-app.get('/api/clients/:id',(req,res)=>{
-    // params es agregar los parametros del get
-    conexion.query('select * from clients where id=?',[req.params.id],(error,rows)=>{
-        if(error){
+// Seleccionar un cliente específico por ID
+app.get('/api/clients/id/:id', (req, res) => {
+    conexion.query('SELECT * FROM clients WHERE id = ?', [req.params.id], (error, rows) => {
+        if (error) {
             throw error;
-        }else{
+        } else {
             res.send(rows);
         }
-    })//consulta de sql
+    });
+});
+
+// Seleccionar un cliente específico por nombre
+app.get('/api/clients/name/:name', (req, res) => {
+    conexion.query('SELECT * FROM clients WHERE name = ?', [req.params.name], (error, rows) => {
+        if (error) {
+            throw error;
+        } else {
+            res.send(rows);
+        }
+    });
 });
 
 app.delete('/api/clients/:id',(req,res)=>{
@@ -96,7 +106,7 @@ app.post('/api/clients',(req,res)=>{
 });
 
 // Actualizar
-app.put('/api/clients/:id',(req,res)=>{
+app.put('/api/clients/id/:id',(req,res)=>{
     let id = req.params.id; // Solo este viene de params
     let name = req.body.name;
     let lastname = req.body.lastname;
@@ -125,16 +135,26 @@ app.get('/api/employees',(req,res)=>{
         }
     });
 });
-// seleccionamos un vendedor en especifico
-app.get('/api/employees/:id',(req,res)=>{
-    // params es agregar los parametros del get
-    conexion.query('select * from employees where id=?',[req.params.id],(error,rows)=>{
-        if(error){
+// Seleccionar un empleado específico por ID
+app.get('/api/employees/id/:id', (req, res) => {
+    conexion.query('SELECT * FROM employees WHERE id = ?', [req.params.id], (error, rows) => {
+        if (error) {
             throw error;
-        }else{
+        } else {
             res.send(rows);
         }
-    })//consulta de sql
+    });
+});
+
+// Seleccionar un empleado específico por nombre
+app.get('/api/employees/name/:name', (req, res) => {
+    conexion.query('SELECT * FROM employees WHERE name = ?', [req.params.name], (error, rows) => {
+        if (error) {
+            throw error;
+        } else {
+            res.send(rows);
+        }
+    });
 });
 app.delete('/api/employees/:id',(req,res)=>{
     let id = req.params.id;
@@ -190,16 +210,26 @@ app.get('/api/articles',(req,res)=>{
         }
     });
 });
-// seleccionamos un vendedor en especifico
-app.get('/api/articles/:id',(req,res)=>{
-    // params es agregar los parametros del get
-    conexion.query('select * from articles where id=?',[req.params.id],(error,rows)=>{
-        if(error){
+// Seleccionar un articulo específico por ID
+app.get('/api/articles/id/:id', (req, res) => {
+    conexion.query('SELECT * FROM articles WHERE id = ?', [req.params.id], (error, rows) => {
+        if (error) {
             throw error;
-        }else{
+        } else {
             res.send(rows);
         }
-    })//consulta de sql
+    });
+});
+
+// Seleccionar un articulo específico por nombre
+app.get('/api/articles/description/:description', (req, res) => {
+    conexion.query('SELECT * FROM articles WHERE description = ?', [req.params.description], (error, rows) => {
+        if (error) {
+            throw error;
+        } else {
+            res.send(rows);
+        }
+    });
 });
 app.delete('/api/articles/:id',(req,res)=>{
     let id = req.params.id;
@@ -229,7 +259,7 @@ app.post('/api/articles',(req,res)=>{
 });
 
 // Actualizar
-app.put('/api/articles/:id',(req,res)=>{
+app.put('/api/articles/id/:id',(req,res)=>{
     let id = req.params.id; // Solo este viene de params
     let description = req.body.description;
     let stock = req.body.stock;
