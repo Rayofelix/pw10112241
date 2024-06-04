@@ -12,8 +12,8 @@
                         <RouterLink class="navbar-brand" to="/clients/login">Login</RouterLink>
                         <RouterLink class="navbar-brand" to="/clients/signIn">Sign In</RouterLink>
                         <RouterLink class="navbar-brand" to="/clients">Clients</RouterLink>
-                        <RouterLink class="navbar-brand" to="/suppliers">Suppliers</RouterLink>
-                        <RouterLink class="navbar-brand" to="/sale">Sale</RouterLink>
+                        <RouterLink class="navbar-brand" to="/employees">Employees</RouterLink>
+                        <RouterLink class="navbar-brand" to="/articles">Articles</RouterLink>
                         <button @click="OutSystem" class="btn btn-primary" v-if="validated==true">Sign Out</button>
                     </li>
                 </ul>

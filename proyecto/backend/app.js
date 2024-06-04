@@ -34,6 +34,8 @@ app.get('/',function(req,res){
     res.send('Ruta de inicio');
 });
 
+
+//=====================================================CLIENTS====================================
 // seleccionar todos los clientes
 app.get('/api/clients',(req,res)=>{
     conexion.query('select * from clients',(error,rows)=>{
@@ -44,6 +46,7 @@ app.get('/api/clients',(req,res)=>{
         }
     });
 });
+
 
 // seleccionamos un cliente en especifico
 app.get('/api/clients/:id',(req,res)=>{
@@ -111,6 +114,138 @@ app.put('/api/clients/:id',(req,res)=>{
         }
     });
 });
+//=========================================EMPLOYEES=======================================
+// seleccionar todos los vendedores
+app.get('/api/employees',(req,res)=>{
+    conexion.query('select * from employees',(error,rows)=>{
+        if(error){
+            throw error;
+        }else{
+            res.send(rows);
+        }
+    });
+});
+// seleccionamos un vendedor en especifico
+app.get('/api/employees/:id',(req,res)=>{
+    // params es agregar los parametros del get
+    conexion.query('select * from employees where id=?',[req.params.id],(error,rows)=>{
+        if(error){
+            throw error;
+        }else{
+            res.send(rows);
+        }
+    })//consulta de sql
+});
+app.delete('/api/employees/:id',(req,res)=>{
+    let id = req.params.id;
+    conexion.query('delete from employees where id=?',[id],(error,rows)=>{
+        if(error){
+            throw error;
+        }else{
+            res.send(rows);
+        }
+    });
+});
+app.post('/api/employees',(req,res)=>{
+    let data = {
+        id: req.body.id,
+        name: req.body.name,
+        lastname: req.body.lastname,
+        department: req.body.department,
+    };
+    let sql = 'insert into employees set ?';
+    conexion.query(sql,data,(error,rows)=>{
+        if(error){
+            throw error;
+        }else{
+            res.send(rows);
+        }
+    });
+});
+
+// Actualizar
+app.put('/api/employees/:id',(req,res)=>{
+    let id = req.params.id; // Solo este viene de params
+    let name = req.body.name;
+    let lastname = req.body.lastname;
+    let department = req.body.department;
+    let sql = 'update employees set name = ?, lastname = ?,department = ? where id = ?';
+    conexion.query(sql,[name,lastname,department,id],(error,rows)=>{
+        if(error){
+            throw error;
+        }else{
+            res.send(rows);
+        }
+    });
+});
+
+// =====================================================ARTICLES======================================================
+// seleccionar todos los vendedores
+app.get('/api/articles',(req,res)=>{
+    conexion.query('select * from articles',(error,rows)=>{
+        if(error){
+            throw error;
+        }else{
+            res.send(rows);
+        }
+    });
+});
+// seleccionamos un vendedor en especifico
+app.get('/api/articles/:id',(req,res)=>{
+    // params es agregar los parametros del get
+    conexion.query('select * from articles where id=?',[req.params.id],(error,rows)=>{
+        if(error){
+            throw error;
+        }else{
+            res.send(rows);
+        }
+    })//consulta de sql
+});
+app.delete('/api/articles/:id',(req,res)=>{
+    let id = req.params.id;
+    conexion.query('delete from articles where id=?',[id],(error,rows)=>{
+        if(error){
+            throw error;
+        }else{
+            res.send(rows);
+        }
+    });
+});
+app.post('/api/articles',(req,res)=>{
+    let data = {
+        id: req.body.id,
+        description: req.body.description,
+        stock: req.body.stock,
+        price: req.body.price
+    };
+    let sql = 'insert into articles set ?';
+    conexion.query(sql,data,(error,rows)=>{
+        if(error){
+            throw error;
+        }else{
+            res.send(rows);
+        }
+    });
+});
+
+// Actualizar
+app.put('/api/articles/:id',(req,res)=>{
+    let id = req.params.id; // Solo este viene de params
+    let description = req.body.description;
+    let stock = req.body.stock;
+    let price = req.body.price;
+
+    let sql = 'update articles set description = ?, stock = ?,price = ? where id = ?';
+    conexion.query(sql,[description,stock,price,id],(error,rows)=>{
+        if(error){
+            throw error;
+        }else{
+            res.send(rows);
+        }
+    });
+});
+
+
 
 // Tercer paso
 // Encender servidor

@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-header">
                 <h4>Clients
-                <RouterLink to="/clients/create" class="btn btn-primary float-end">Agregar</RouterLink>
+                <RouterLink to="/clients/create" class="btn btn-primary float-end">Add</RouterLink>
                 </h4>
             </div>
             <div class="card-body">
@@ -52,9 +52,11 @@
 
 <script>
     import axios from 'axios';
+    import {Icon} from '@iconify/vue'
     import { RouterLink } from 'vue-router';
     export default{
         name:'ClientsView',
+        components:{Icon},
         data(){
             return{
                 clients:[],

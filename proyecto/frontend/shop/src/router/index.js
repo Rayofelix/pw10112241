@@ -6,6 +6,12 @@ import ClientsEditView  from '../views/ClientsEditView.vue'
 import LoginView from '../views/LoginView.vue'
 import SignInView from '../views/SignInView.vue'
 import UnauthorizedView from '../views/UnauthorizedView.vue'
+import EmployeeView from '../views/EmployeeView.vue'
+import EmployeeCreateView from '../views/EmployeeCreateView.vue'
+import EmployeeEditView from '../views/EmployeesEditView.vue'
+import ArticlesView from '../views/ArticlesView.vue'
+import ArticlesCreateView from '../views/ArticlesCreateView.vue'
+import ArticlesEditView from '../views/ArticlesEditView.vue'
 import { record } from 'zod'
 import { getAuth } from 'firebase/auth'
 
@@ -51,6 +57,43 @@ const router = createRouter({
       component: ClientsEditView
     },
     {
+      path: '/employees',
+      name: 'employees',
+      component: EmployeeView,
+      meta:{
+        requiredAuth:true
+      }
+    },
+    {
+      path: '/employees/create',
+      name: 'employeesCreate',
+      component: EmployeeCreateView
+    },
+    {
+      path: '/employees/:id/edit',
+      name: 'employeesEdit',
+      component: EmployeeEditView
+    },
+    
+    {
+      path: '/articles',
+      name: 'articles',
+      component: ArticlesView,
+      meta:{
+        requiredAuth:true
+      }
+    },
+    {
+      path: '/articles/:id/edit',
+      name: 'articlesEdit',
+      component: ArticlesEditView
+    },
+    {
+      path: '/articles/create',
+      name: 'articlesCreate',
+      component: ArticlesCreateView
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
@@ -65,7 +108,7 @@ router.beforeEach((to,from,next)=>{
   if(to.matched.some((record)=> record.meta.requiredAuth)){
     if (getAuth().currentUser) {
         next();
-    }else{
+    }else if(to.path.includes('/clients') || to.path.includes('/employees') || to.path.includes('/articles')){
       next('/clients/unauthorized')
     }
   }else{
